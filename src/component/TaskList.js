@@ -5,8 +5,8 @@ function TaskList(props) {
   const { list } = props;
   return (
     <>
-      {list.map((obj) => (
-        <TaskItem isCompleted={obj.isCompleted} text={obj.text} />
+      {list.map((obj, id) => (
+        <TaskItem isCompleted={obj.isCompleted} text={obj.text} key={id} />
       ))}
     </>
   );

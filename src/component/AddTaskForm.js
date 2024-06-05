@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function AddTaskForm(props) {
   const { addTask } = props;
@@ -8,6 +8,7 @@ function AddTaskForm(props) {
     setUserInput(e.target.value);
   };
   const handleInputSubmit = (e) => {
+    e.preventDefault();
     addTask({
       text: userInput,
       isCompleted: false,
@@ -16,11 +17,10 @@ function AddTaskForm(props) {
   };
 
   return (
-    <input
-      value={userInput}
-      onChange={handleInputChange}
-      onSubmit={handleInputSubmit}
-    />
+    <form onSubmit={handleInputSubmit}>
+      <input value={userInput} onChange={handleInputChange} />
+      <p>{userInput}</p>
+    </form>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddTaskForm from "../component/AddTaskForm";
 import TaskList from "../component/TaskList";
 
@@ -12,6 +12,7 @@ function AppContainer() {
         isCompleted: e.isCompleted,
       },
     ]);
+    console.log(taskList);
   };
 
   return (
