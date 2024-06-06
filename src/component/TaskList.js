@@ -2,7 +2,7 @@ import React from "react";
 import TaskItem from "./TaskItem";
 
 function TaskList(props) {
-  const { list, handleCompleteTask } = props;
+  const { list, handleCompleteTask, handleEditTask } = props;
   return (
     <>
       {list.map((obj, id) => (
@@ -10,8 +10,9 @@ function TaskList(props) {
           isCompleted={obj.isCompleted}
           text={obj.text}
           key={id}
-          taskId={id}
           handleCompleteTask={handleCompleteTask}
+          handleEditTask={handleEditTask}
+          taskId={id}
         />
       ))}
     </>

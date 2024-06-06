@@ -4,16 +4,32 @@
   box-sizing: border-box;
 }
 
-span {
-  vertical-align: bottom;
+.taskItemBox,
+.textCompleted {
+  vertical-align: top;
   flex-grow: 1;
-  margin: 2px;
+  margin: 4px;
   font-family: Sans-Serif;
+  border: none;
+  border-bottom: none;
+  width: 80%;
+  resize: none;
+  line-height: 1; 
+  font-size: 18px;
 }
 
-button {
+.taskItemBox:focus,
+.textCompleted:focus {
+  outline: none;
+  border-bottom: 1px black solid;
+  /* resize: vertical; */
+}
+
+.taskItemButton, 
+.buttonCompleted {
   padding: 6px;
   margin: 2px;
+  vertical-align: top;
 }
 
 .textCompleted {

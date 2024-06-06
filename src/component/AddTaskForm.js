@@ -18,8 +18,8 @@ function AddTaskForm(props) {
   };
 
   return (
-    <form onSubmit={handleInputSubmit} style={styles.form}>
-      <input value={userInput} onChange={handleInputChange} />
+    <form onSubmit={handleInputSubmit}>
+      <input value={userInput} onChange={handleInputChange} placeholder="Add task..." className={styles.addTaskInput}/>
     </form>
   );
 }

@@ -4,7 +4,7 @@ import TaskList from "../component/TaskList";
 
 function AppContainer() {
   const [taskList, setTaskList] = useState([]);
-  const addTask = (e) => {
+  const handleAddTask = (e) => {
     setTaskList([
       ...taskList,
       {
@@ -25,11 +25,27 @@ function AppContainer() {
       });
     });
   };
+  const handleEditTask = (taskId, newText) => {
+    setTaskList((prevTaskList) => {
+      return prevTaskList.map((e, id) => {
+        return id !== taskId
+          ? e
+          : {
+              ...e,
+              text: newText,
+            };
+      });
+    });
+  };
 
   return (
     <>
-      <TaskList list={taskList} handleCompleteTask={handleCompleteTask} />
-      <AddTaskForm addTask={addTask} />
+      <TaskList
+        list={taskList}
+        handleCompleteTask={handleCompleteTask}
+        handleEditTask={handleEditTask}
+      />
+      <AddTaskForm addTask={handleAddTask} />
     </>
   );
 }
