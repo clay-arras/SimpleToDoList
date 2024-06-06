@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import styles from './AddTaskForm.module.css'; 
 
 function AddTaskForm(props) {
   const { addTask } = props;
@@ -17,9 +18,8 @@ function AddTaskForm(props) {
   };
 
   return (
-    <form onSubmit={handleInputSubmit}>
+    <form onSubmit={handleInputSubmit} style={styles.form}>
       <input value={userInput} onChange={handleInputChange} />
-      <p>{userInput}</p>
     </form>
   );
 }

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+span {
+  vertical-align: bottom;
+  flex-grow: 1;
+  margin: 2px;
+  font-family: Sans-Serif;
+}
+
+button {
+  padding: 6px;
+  margin: 2px;
+}
+
+.textCompleted {
+  text-decoration: line-through;
+}
+
+.buttonCompleted {
+  background-color: #adb8c2;
+}

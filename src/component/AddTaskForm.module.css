@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 8px;
+  margin: 8px;
+  font-family: Sans-Serif;
+}
+
+input:focus {
+  background-color: rgb(245, 255, 255);
+}

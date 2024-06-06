@@ -12,15 +12,26 @@ function AppContainer() {
         isCompleted: e.isCompleted,
       },
     ]);
-    console.log(taskList);
+  };
+  const handleCompleteTask = (taskId) => {
+    setTaskList((prevTaskList) => {
+      return prevTaskList.map((e, id) => {
+        return id !== taskId
+          ? e
+          : {
+              ...e,
+              isCompleted: !e.isCompleted,
+            };
+      });
+    });
   };
 
   return (
     <>
-      <TaskList list={taskList}/>
-      <AddTaskForm addTask={addTask}/>
+      <TaskList list={taskList} handleCompleteTask={handleCompleteTask} />
+      <AddTaskForm addTask={addTask} />
     </>
-  )
+  );
 }
 
 export default AppContainer;
